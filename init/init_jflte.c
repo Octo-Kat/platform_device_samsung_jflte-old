@@ -102,6 +102,16 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("telephony.lteOnCdmaDevice", "1");
         property_set("ro.telephony.default_network", "8");
         property_set("telephony.sms.pseudo_multipart", "1");
+    } else if (strstr(bootloader, "L720T")) {
+        /* jflterefreshspr */
+        property_set("ro.build.fingerprint", "samsung/jflterefreshspr/jflterefreshspr:4.3/JSS15J/L720TVPUAMK5:user/release-keys");
+        property_set("ro.build.description", "jflterefreshspr-user 4.3 JSS15J L720TVPUAMK5 release-keys");
+        property_set("ro.product.model", "SPH-L720T");
+        property_set("ro.product.device", "jflterefreshspr");
+        property_set("ro.telephony.ril.v3", "newDriverCallU");
+        property_set("telephony.lteOnCdmaDevice", "1");
+        property_set("ro.telephony.default_network", "8");
+        property_set("telephony.sms.pseudo_multipart", "1");
     } else if (strstr(bootloader, "M919")) {
         /* jfltetmo */
         property_set("ro.build.fingerprint", "samsung/jfltetmo/jfltetmo:4.3/JSS15J/M919UVUEMK2:user/release-keys");
