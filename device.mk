@@ -81,6 +81,10 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc
 
+# S4 Advanced Settings
+PRODUCT_PACKAGES += \
+    SamsungServiceMode
+
 # Torch
 PRODUCT_PACKAGES += Torch
 
@@ -130,9 +134,6 @@ PRODUCT_PACKAGES += lights.msm8960
 # QC Perf
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=/system/lib/libqc-opt.so
-
-# QRNGD
-PRODUCT_PACKAGES += qrngd
 
 # Prepatch to fix BT/WiFi bus lockups
 PRODUCT_COPY_FILES += device/samsung/jflte/bluetooth/bcm4335_prepatch.hcd:system/vendor/firmware/bcm4335_prepatch.hcd
