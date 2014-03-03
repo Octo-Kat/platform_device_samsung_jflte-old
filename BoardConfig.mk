@@ -33,10 +33,10 @@ BOARD_MKBOOTIMG_ARGS         := --ramdisk_offset 0x02000000
 BOARD_KERNEL_PAGESIZE        := 2048
 TARGET_KERNEL_VARIANT_CONFIG := aosp_jf_defconfig
 TARGET_KERNEL_SELINUX_CONFIG := jfselinux_defconfig
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := Linaro-4.7
 
-# Toolchain Defines: Uncomment to define toolchain.
+# ROM toolchain
 TARGET_GCC_VERSION_AND := 4.8
-TARGET_GCC_VERSION_ARM := 4.7
 
 TARGET_BOOTLOADER_BOARD_NAME := MSM8960
 
