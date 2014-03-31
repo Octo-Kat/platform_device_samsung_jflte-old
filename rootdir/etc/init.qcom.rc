@@ -665,6 +665,10 @@ on property:service.bootanim.exit=1
     write /proc/sys/net/ipv6/conf/rmnet_usb2/accept_ra 2
     write /proc/sys/net/ipv6/conf/rmnet_usb3/accept_ra 2
 
+on property:dev.bootcomplete=1
+    # disable pulsing led on boot complete
+    write /sys/class/sec/led/led_pattern 0
+
 # CM Performance Profiles
 
 # Powersave
