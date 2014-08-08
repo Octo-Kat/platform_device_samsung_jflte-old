@@ -42,7 +42,6 @@ void vendor_load_properties()
     char platform[PROP_VALUE_MAX];
     char bootloader[PROP_VALUE_MAX];
     char device[PROP_VALUE_MAX];
-    char devicename[PROP_VALUE_MAX];
     int rc;
 
     rc = property_get("ro.board.platform", platform);
@@ -82,7 +81,6 @@ void vendor_load_properties()
         property_set("ro.product.model", "SCH-R970X");
         property_set("ro.product.device", "jfltecsp");
         property_set("telephony.sms.pseudo_multipart", "1");
-        property_set("ro.gps.set_privacy", "1");
     } else if (strstr(bootloader, "L720")) {
         /* jfltespr */
         cdma_properties("1");
@@ -91,7 +89,6 @@ void vendor_load_properties()
         property_set("ro.product.model", "SPH-L720");
         property_set("ro.product.device", "jfltespr");
         property_set("telephony.sms.pseudo_multipart", "1");
-        property_set("ro.gps.set_privacy", "1");
     } else if (strstr(bootloader, "M919")) {
         /* jfltetmo */
         gsm_properties();
@@ -109,7 +106,6 @@ void vendor_load_properties()
         property_set("ro.cdma.home.operator.alpha", "U.S.Cellular");
         property_set("ro.cdma.home.operator.numeric", "311580");
         property_set("telephony.sms.pseudo_multipart", "1");
-        property_set("ro.gps.set_privacy", "1");
     } else if (strstr(bootloader, "I545")) {
         /* jfltevzw */
         cdma_properties("0");
@@ -161,9 +157,8 @@ void gsm_properties()
 
 void cdma_properties(char cdma_sub[])
 {
-    property_set("ro.telephony.default_cdma_sub", cdma_sub); // 0: RUIM/SIM  1: NV
+    property_set("ro.telephony.default_cdma_sub", cdma_sub);
     property_set("ro.gps.set_privacy", "1");
-    property_set("ro.telephony.ril.v3", "newDriverCallU");
     property_set("telephony.lteOnCdmaDevice", "1");
     property_set("ro.telephony.default_network", "10");
 }
